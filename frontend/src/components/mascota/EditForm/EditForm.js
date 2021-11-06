@@ -1,32 +1,139 @@
 import React, { useState } from "react";
+import Modal from 'react-modal';
+import { useDispatch, useSelector } from "react-redux";
+import Swal from 'sweetalert2';
+import { uiCloseModal } from "../../../actions/ui";
+import './EditForm.css';
+
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+};
+
+Modal.setAppElement('#root');
 
 export const EditMascota = () => {
+
+    const { modalOpen } = useSelector(state =>  state);
+    const dispatch = useDispatch();
+
+    const [formValues, setFormValues] = useState({
+        mascota: '',
+        dueño: '',
+        edad: ''    
+    });
     
-    const [mascota, setMascota] = useState('');
-    const [dueño, setDueño] = useState('');
-    const [edad, setEdad] = useState('');
+    const { mascota, dueño, edad } = formValues;
+
+    const closeModal = () => {
+        console.log("cerrar modal");
+        dispatch(uiCloseModal());
+    }
+
+    const handleChange = ({target}) => {
+        setFormValues({
+            ...formValues,
+            [target.name]: target.value
+        });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if ( mascota.trim().length < 1 ) {
+            return Swal.fire('Error', 'No puedes dejar el nombre de la mascota vacío', 'error');
+        }else if ( dueño.trim().length < 1 ) {
+            return Swal.fire('Error', 'No puedes dejar el nombre del dueño vacío', 'error');
+        }else if ( edad.trim().length < 1 ) {
+            return Swal.fire('Error', 'No puedes dejar la edad de la mascota vacío', 'error');
+        }
+        
+    }
 
     return (
-        <form>
-            <h3>Editar una mascota</h3>
-            <div>
-                <label>Nombre Mascota:</label>
-                <input type="text" value={mascota} onChange={ (e) => { setMascota(e.target.value) }} placeholder="Nombre de la mascota"></input>
-            </div>
-            
-            <div>
-                <label>Dueño Mascota:</label>
-                <input type="text" value={dueño} onChange={ (e) => { setDueño(e.target.value) }} placeholder="Nombre del dueño"></input>
-            </div>
+        <div>
+            <Modal
+                isOpen={modalOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                className="modal"
+                overlayClassName="modal-fondo"
+                closeTimeoutMS={200}
+            >
+                <div className="container">
+                    <div className="row bg-green">
+                        <div className="col add-form">
+                            <h4> Editar mascota </h4>
+                        </div>
+                    </div>       
+                    <div className="row pt-3">
+                    <form 
+                        className="container"
+                        onSubmit={ handleSubmit }
+                    >
+                        <div className="form-group row">
+                            <i className="col-sm-1 col-form-label fa-solid fa-dog"></i>
+                            <div className="col-sm-11">                                   
+                                <input 
+                                    type="text" 
+                                    name="mascota" 
+                                    className="form-control" 
+                                    value={mascota} 
+                                    onChange={ handleChange } 
+                                    placeholder="Nombre de la mascota"
+                                />
+                            </div>                            
+                        </div>
 
-            <div>
-                <label>Edad Mascota:</label>
-                <input type="number" value={edad} onChange={ (e) => { setEdad(e.target.value) }} placeholder="Edad de la mascota"></input>
-            </div>            
+                        <div className="form-group row">
+                            <i className="col-sm-1 col-form-label fa-solid fa-user"></i>
+                            <div className="col-sm-11"> 
+                            <input 
+                                type="text" 
+                                name="dueño" 
+                                className="form-control" 
+                                value={dueño} 
+                                onChange={ handleChange } 
+                                placeholder="Nombre del dueño"
+                            />
+                            </div>                            
+                        </div>
 
-            <div>
-                <input type="submit" value="Actualizar Mascota"></input>
-            </div>
-        </form>
+                        <div className="form-group row">
+                            <i  className="col-sm-1 col-form-label fa-solid fa-calendar"></i>
+                            <div className="col-sm-9"> 
+                            <input 
+                                type="number" 
+                                name="edad" 
+                                className="form-control" 
+                                value={edad} 
+                                onChange={ handleChange } 
+                                placeholder="Edad de la mascota"
+                            />
+                            </div>                
+                            <label className="col-sm-2 col-form-label"> <b>Años</b></label>            
+                        </div> 
+
+                        <hr />
+
+                        <div className="form-group row">
+                            <div className="col text-center">
+                                <button type="submit" className="btn btn-success btnSubmit">
+                                    Editar
+                                </button>
+                            </div>                            
+                        </div>
+
+                        </form>
+                    </div>
+                </div>                
+            </Modal>
+        </div>
     )
 }
