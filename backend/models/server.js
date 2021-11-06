@@ -1,14 +1,16 @@
 //Librerías necesarias para nuestro servidor
 const express = require('express');
 const cors = require('cors');
-
-// Conexión con la base de datos
-const { mongoose } = require('../controller/database');
+const { dbConnection } = require('../database/config');
 
 class Server {
 
     // Configuración inicial de nuestro servidor
     constructor() {
+        // Conexión con la base de datos
+        dbConnection();
+
+        // Iniciar librería express
         this.app = express();
         this.port = 3800;
         this.mascotaPath = '/mascota';

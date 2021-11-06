@@ -1,4 +1,5 @@
-// Rutas de Mascotas
+// Rutas de Mascotas 
+// ---> RUTA: /mascotas
 const { Router } = require('express');
 const { check } = require('express-validator');
 const router = Router();
@@ -23,12 +24,12 @@ router.post(
 );
 
 router.delete(
-    '/', 
+    '/:id', 
     controladorMascota.eliminarMascota
 );
 
-router.post(
-    '/', 
+router.put(
+    '/:id', 
     [ //middlewares
         check('mascota', 'El nombre de la mascota es obligatorio').not().isEmpty(),
         check('dueño', 'El nombre del dueño de la mascota es obligatorio').not().isEmpty(),
