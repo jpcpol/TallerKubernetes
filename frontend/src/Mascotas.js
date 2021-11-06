@@ -1,19 +1,27 @@
 import React from 'react';
-import { AddMascota } from './components/AddMascota';
-import { ListMascota } from './components/ListMascota';
-import { EditMascota } from './components/EditMascota';
+
+import { AddForm } from './components/mascota/AddForm/AddForm';
+import { TableView } from './components/mascota/TableView/TableView';
+import { Navbar } from './components/ui/Navbar';
 
 export const Mascotas = () => {
     return (
         <div>
-            <h2>Mascotas</h2>
-            <hr/>
-            <ListMascota />
-            <hr/>
-            <AddMascota />
-            <hr/>
-            <EditMascota />
-            <hr/>
+            <div className="row">
+                <div className="col">
+                    <Navbar />
+                </div>                
+            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <TableView />
+                    </div>
+                    <div className="col">
+                        <AddForm />
+                    </div>              
+                </div>
+            </div>    
         </div>        
     )
 }
