@@ -5,7 +5,6 @@ import { mascotaAddNew } from "../../../actions/mascota";
 import './AddForm.css';
 
 const initForm = {
-    id: '',
     mascota: '',
     dueño: '',
     edad: ''
@@ -22,8 +21,7 @@ export const AddForm = () => {
     const handleChange = ({target}) => {
         setFormValues({
             ...formValues,
-            [target.name]: target.value,
-            id: Math.random() * (999999999999 - 50) + 50
+            [target.name]: target.value
         });
     }
 
@@ -38,9 +36,7 @@ export const AddForm = () => {
             return Swal.fire('Error', 'No puedes dejar la edad de la mascota vacío', 'error');
         }
 
-        dispatch(mascotaAddNew({
-            ...formValues
-        })); 
+        dispatch(mascotaAddNew(formValues)); 
 
         setFormValues(initForm);
     }

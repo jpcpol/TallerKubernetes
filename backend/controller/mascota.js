@@ -1,14 +1,18 @@
 const { request, response } = require('express');
 const Mascota = require('../models/mascota');
+const crypto = require('crypto');
 
 const crearMascota = async (req = request, res = response) => {  
     try {
-        const mascota = new Mascota( req.body );
-        await mascota.save();
+        const new_body = { ...req.body, key: crypto.createHash('md5').update(req.body.mascota + req.body.dueño + req.body.edad).digest('hex') }
+
+        const mascota = new Mascota( new_body );
+        const createdMascota = await mascota.save();
 
         res.status(201).json({
             status: true,
             msg: 'Mascota almacenada correctamente',
+            mascota: createdMascota
         });
     } catch(err) {
         console.log(err);

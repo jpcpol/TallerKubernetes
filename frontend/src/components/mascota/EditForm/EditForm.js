@@ -22,7 +22,7 @@ Modal.setAppElement('#root');
 const initForm = {
     mascota: '',
     dueño: '',
-    edad: ''
+    edad: 0
 };
 
 export const EditMascota = () => {
@@ -39,7 +39,7 @@ export const EditMascota = () => {
             setFormValues(actualMascota);
         }        
     }, [actualMascota, setFormValues]);
-
+    
     const closeModal = () => {
         dispatch(uiCloseModal());
     }
@@ -58,7 +58,7 @@ export const EditMascota = () => {
             return Swal.fire('Error', 'No puedes dejar el nombre de la mascota vacío', 'error');
         }else if ( dueño.trim().length < 1 ) {
             return Swal.fire('Error', 'No puedes dejar el nombre del dueño vacío', 'error');
-        }else if ( edad.trim().length < 1 ) {
+        }else if ( edad <= 0 ) {
             return Swal.fire('Error', 'No puedes dejar la edad de la mascota vacío', 'error');
         }
         

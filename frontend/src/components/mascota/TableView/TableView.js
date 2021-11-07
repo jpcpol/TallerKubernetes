@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './TableView.css';
 
 import { EditMascota } from "../EditForm/EditForm";
 import { uiOpenModal } from "../../../actions/ui";
-import { mascotaDeleteItem, mascotaSetItem } from "../../../actions/mascota";
+import { mascotaDeleteItem, mascotaLoadItems, mascotaSetItem } from "../../../actions/mascota";
 
 export const TableView = () => {
 
     const { mascotas } = useSelector(state =>  state.mascota);
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch( mascotaLoadItems() );
+    }, [dispatch]);
 
     const editItem = (e) => {
         dispatch(mascotaSetItem(e));

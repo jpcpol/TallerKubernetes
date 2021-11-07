@@ -1,18 +1,19 @@
 import { types } from "../types/types";
 
+/*{
+    id: 1,
+    mascota: "Luis",
+    dueño: "UWU",
+    edad: '23'
+},{
+    id: 2,
+    mascota: "Terry",
+    dueño: "Luis",
+    edad: '2'
+}*/
 
 const initialState = {
-    mascotas: [{
-        id: 1,
-        mascota: "Luis",
-        dueño: "UWU",
-        edad: '23'
-    },{
-        id: 2,
-        mascota: "Terry",
-        dueño: "Luis",
-        edad: '2'
-    }],
+    mascotas: [],
     actualMascota: null
 };
 
@@ -38,9 +39,10 @@ export const mascotaReducer = ( state = initialState, action  ) => {
                     e => (e.id !== action.payload.id) 
                 ), actualMascota: null
             }
-        case types.mascotaViewItems:
+        case types.mascotaLoaded:
             return {
-                ...state
+                ...state,
+                mascotas: [ ...action.payload ]
             }
         case types.mascotaEditItem:
             return {

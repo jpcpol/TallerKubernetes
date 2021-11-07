@@ -7,5 +7,5 @@ export const types = {
     mascotaSetItem: '[mascota] Set Item Active',
     mascotaEditItem: '[mascota] Edit Item',
     mascotaDeleteItem: '[mascota] Delte Item',
-    mascotaViewItems: '[mascota] View Items'
+    mascotaLoaded: '[mascota] Mascota Cargada'
 }

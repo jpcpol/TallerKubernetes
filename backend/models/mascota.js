@@ -1,6 +1,11 @@
 const { Schema, model } = require('mongoose');
 
 const MascotaSchema = Schema({
+    key: {
+        type: String,
+        required: true,
+        unique: true
+    },
     mascota: {
         type: String,
         required: true
@@ -12,7 +17,7 @@ const MascotaSchema = Schema({
     edad: {
         type: Number,
         required: true
-    }
+    }    
 });
 
 MascotaSchema.method('toJSON', function() {
