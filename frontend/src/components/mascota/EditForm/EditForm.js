@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from "react-redux";
 import Swal from 'sweetalert2';
+import { mascotaUpdateItem } from "../../../actions/mascota";
 import { uiCloseModal } from "../../../actions/ui";
 import './EditForm.css';
 
@@ -18,21 +19,28 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
+const initForm = {
+    mascota: '',
+    dueño: '',
+    edad: ''
+};
+
 export const EditMascota = () => {
 
-    const { modalOpen } = useSelector(state =>  state);
+    const { modalOpen } = useSelector(state =>  state.ui);
+    const { actualMascota } = useSelector(state => state.mascota)
     const dispatch = useDispatch();
 
-    const [formValues, setFormValues] = useState({
-        mascota: '',
-        dueño: '',
-        edad: ''    
-    });
-    
+    const [formValues, setFormValues] = useState(initForm);
     const { mascota, dueño, edad } = formValues;
 
+    useEffect(() => {
+        if( actualMascota ){
+            setFormValues(actualMascota);
+        }        
+    }, [actualMascota, setFormValues]);
+
     const closeModal = () => {
-        console.log("cerrar modal");
         dispatch(uiCloseModal());
     }
 
@@ -54,6 +62,12 @@ export const EditMascota = () => {
             return Swal.fire('Error', 'No puedes dejar la edad de la mascota vacío', 'error');
         }
         
+        if ( actualMascota ){
+            dispatch(mascotaUpdateItem(formValues));
+        }
+        
+        setFormValues(initForm);
+        closeModal();
     }
 
     return (

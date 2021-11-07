@@ -1,21 +1,29 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Swal from 'sweetalert2';
+import { mascotaAddNew } from "../../../actions/mascota";
 import './AddForm.css';
+
+const initForm = {
+    id: '',
+    mascota: '',
+    dueño: '',
+    edad: ''
+};
 
 export const AddForm = () => {
 
-    const [formValues, setFormValues] = useState({
-        mascota: '',
-        dueño: '',
-        edad: ''
-    });
+    const dispatch = useDispatch();
 
+    const [formValues, setFormValues] = useState(initForm);
+    
     const { mascota, dueño, edad } = formValues;
 
     const handleChange = ({target}) => {
         setFormValues({
             ...formValues,
-            [target.name]: target.value
+            [target.name]: target.value,
+            id: Math.random() * (999999999999 - 50) + 50
         });
     }
 
@@ -29,6 +37,12 @@ export const AddForm = () => {
         }else if ( edad.trim().length < 1 ) {
             return Swal.fire('Error', 'No puedes dejar la edad de la mascota vacío', 'error');
         }
+
+        dispatch(mascotaAddNew({
+            ...formValues
+        })); 
+
+        setFormValues(initForm);
     }
 
     return (
