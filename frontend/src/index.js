@@ -5,5 +5,8 @@ import { Mascotas } from './Mascotas';
 
 import './index.css';
 
-ReactDOM.render(<Mascotas />, document.getElementById('root'));
+ReactDOM.render(
+    <Mascotas />, 
+    document.getElementById('root')
+);
 
