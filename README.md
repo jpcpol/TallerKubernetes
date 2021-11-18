@@ -1,4 +1,4 @@
-<h1> <b> Taller de Pruebas Funcionales </b> </h1>
+<h1> <b> Taller de Kubernetes </b> </h1>
 
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-gray?style=flat-square&logo=kubernetes)
 ![MongoDB](https://img.shields.io/badge/MongoDB-gray?style=flat-square&logo=mongodb)
