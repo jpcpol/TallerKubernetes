@@ -1,4 +1,4 @@
-<h1> Taller de Pruebas Funcionales </h1>
+<h1> <b> Taller de Pruebas Funcionales </b> </h1>
 
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-gray?style=flat-square&logo=kubernetes)
 ![MongoDB](https://img.shields.io/badge/MongoDB-gray?style=flat-square&logo=mongodb)
@@ -12,7 +12,7 @@
 
 Bienvenidos a este taller de Kubernetes, donde se realizarán los respectivos archivos para poder realizar el despligue de nuestro sistema en un clúster de Kubernetes. Para posteriormente implementar Prometheus y Grafana para monitorear el funcionamiento de nuestro sistema. A continuación se muestra la arquitectura del sistema que se desea implementar:
 
-![ArquitecturaKubernetes](https://i.ibb.co/x7SCpyL/PCI.png )
+![ArquitecturaKubernetes](https://i.ibb.co/x7SCpyL/PCI.png)
 
 <h2> Contenido </h2>
 
