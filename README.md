@@ -1,4 +1,4 @@
-<h1> Taller de Pruebas Funcionales </h1>
+<h1> <b> Taller de Pruebas Funcionales </b> </h1>
 
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-gray?style=flat-square&logo=kubernetes)
 ![MongoDB](https://img.shields.io/badge/MongoDB-gray?style=flat-square&logo=mongodb)
@@ -10,26 +10,22 @@
 
 <h2> Descripción </h2>
 
-Bienvenidos a este taller de pruebas funcionales, donde se realizarán pruebas de unitarias y de integración a una aplicación sencilla, para posteriormente levantar dicho programa utilizando Docker y Kubernetes. A continuación se muestra la arquitectura del despliegue de kubernetes:
+Bienvenidos a este taller de Kubernetes, donde se realizarán los respectivos archivos para poder realizar el despligue de nuestro sistema en un clúster de Kubernetes. Para posteriormente implementar Prometheus y Grafana para monitorear el funcionamiento de nuestro sistema. A continuación se muestra la arquitectura del sistema que se desea implementar:
 
-![ArquitecturaKubernetes](https://i.ibb.co/j4Zz8cm/arquitectura-Kubernetes.png)
-
-La siguiente arquitectura nos muestra la arquitectura de la aplicación web:
-
-![ArquitecturaKubernetes](https://i.ibb.co/C8gfV9q/arquitectura-App.png)
+![ArquitecturaKubernetes](https://i.ibb.co/x7SCpyL/PCI.png)
 
 <h2> Contenido </h2>
 
-- [01 - Pruebas unitarias y de integración](https://github.com/LuisArana631/Taller-gRPC/tree/main/01-locust)
-- [02 - Dockerfile](https://github.com/LuisArana631/Taller-gRPC/tree/main/02-grpcServer)
-- [03 - Kubernetes](https://github.com/LuisArana631/Taller-gRPC/tree/main/03-grpcClient)
+- [01 - Dockerfile](https://github.com/LuisArana631/Taller-gRPC/tree/main/02-grpcServer)
+- [02 - Deployment Kubernetes](https://github.com/LuisArana631/Taller-gRPC/tree/main/03-grpcClient)
+- [03 - Monitoreo con Prometheus y Grafana](https://github.com/LuisArana631/Taller-gRPC/tree/main/03-grpcClient)
 
 
 <h2> Requisitos </h2>
 
-Para poder realizar el siguiente ejemplo, puedes utilizar una maquina virtual, no importa en que plataforma la utilices puede ser aws, google cloud o digital ocean. También puedes implementarla en tu maquina local, pero puedes consumir muchos recursos al levantar los servicios de la arquitectura.
+Para realizar el siguiente ejemplo, utilizaremos un clúster en la plataforma de Google Cloud. También puedes implementarla en tu maquina local.
 
-También son necesarias las siguientes herramientas:
+También se utilizarán las siguientes herramientas:
 
 - Editor a elección (Sublime Text, Visual Studio Code, Atom)
 - Node JS
@@ -43,3 +39,4 @@ También son necesarias las siguientes herramientas:
 - [NodeJS](https://nodejs.org/es/)
 - [React](https://es.reactjs.org/)
 - [VSCode](https://code.visualstudio.com/)
+

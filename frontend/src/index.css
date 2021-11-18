@@ -1,7 +1,3 @@
-* {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-body {
-    padding: 30px;
+.bg-green{
+    background: rgb(44, 78, 37);
 }
