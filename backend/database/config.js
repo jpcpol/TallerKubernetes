@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbConnection = async () => {
     try {
-        mongoose.connect('mongodb+srv://root:root@cluster0.obe6m.mongodb.net/mascotas', {
+        mongoose.connect('mongodb+srv://TallerKubernetes:uZr8KyasKPqwHxor@cluster0.obe6m.mongodb.net/mascotas', {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
