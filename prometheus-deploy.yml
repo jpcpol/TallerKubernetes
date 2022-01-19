@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: prometheus-server
-    sepc:
+    spec:
       containers:
         - name: prometheus
           image: prom/prometheus
