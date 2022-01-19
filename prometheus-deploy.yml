@@ -6,7 +6,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: 
+    matchLabels:
       app: prometheus-server
   template:
     metadata:
@@ -31,6 +31,6 @@ spec:
           configMap:
             defaultMode: 420
             name: prometheus-server-conf
-
+  
         - name: prometheus-storage-volume
           emptyDir: {}

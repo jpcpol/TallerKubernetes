@@ -4,10 +4,10 @@ metadata:
   name: prometheus-service
   namespace: default
 spec:
-  selector:
-    app: prometheus-service
+  selector: 
+    app: prometheus-server
   type: LoadBalancer
-  ports: 
+  ports:
     - protocol: TCP
       port: 80
       targetPort: 9090
