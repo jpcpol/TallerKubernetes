@@ -7,7 +7,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 9090
+      targetPort: 9100
       name: http
   selector:
     role: nodeexporter

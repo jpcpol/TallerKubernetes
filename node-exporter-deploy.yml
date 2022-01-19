@@ -17,4 +17,4 @@ spec:
         - name: nodeexporter
           image: prom/node-exporter
           ports:
-          - containerPort: 9090
+          - containerPort: 9100
