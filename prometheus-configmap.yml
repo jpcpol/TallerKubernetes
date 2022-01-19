@@ -11,4 +11,4 @@ data:
       - job_name: 'node-exporter'
 
         static_configs:
-            -targets: ['ip:80']
+            - targets: ['10.104.1.110:80']
