@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment 
-metada:
+metadata:
   name: nodeexporter
   namespace: default
 spec:
