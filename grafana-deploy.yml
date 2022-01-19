@@ -14,7 +14,7 @@ spec:
         role: grafana
     spec:
       containers:
-      - name: grafana
-        image: grafana/grafana
-        ports:
-        - containerPort: 3000
+        - name: grafana
+          image: grafana/grafana
+          ports:
+            - containerPort: 3000

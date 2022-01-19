@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: dianmz22/backend
+        image: blocnotas/backend
         ports:
         - containerPort: 3800

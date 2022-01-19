@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment 
 metadata:
   name: nodeexporter
   namespace: default
@@ -14,7 +14,7 @@ spec:
         role: nodeexporter
     spec:
       containers:
-      - name: nodeexporter
-        image: prom/node-exporter
-        ports:
-        - containerPort: 9090
+        - name: nodeexporter
+          image: prom/node-exporter
+          ports:
+          - containerPort: 9100
