@@ -16,9 +16,9 @@ Bienvenidos a este taller de Kubernetes, donde se realizarán los respectivos ar
 
 <h2> Contenido </h2>
 
-- [01 - Dockerfile](https://github.com/LuisArana631/Taller-gRPC/tree/main/02-grpcServer)
-- [02 - Deployment Kubernetes](https://github.com/LuisArana631/Taller-gRPC/tree/main/03-grpcClient)
-- [03 - Monitoreo con Prometheus y Grafana](https://github.com/LuisArana631/Taller-gRPC/tree/main/03-grpcClient)
+- [01 - Dockerfile](https://github.com/LuisArana631/Taller_Kubernetes)
+- [02 - Deployment Kubernetes](https://github.com/LuisArana631/Taller_Kubernetes)
+- [03 - Monitoreo con Prometheus y Grafana](https://github.com/LuisArana631/Taller_Kubernetes)
 
 
 <h2> Requisitos </h2>
