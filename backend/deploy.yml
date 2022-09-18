@@ -20,6 +20,10 @@ spec:
     spec:
       containers:
       - name: backend
-        image: blocnotas/backend
+        image: killerpol/backend
+        resources:
+            limits:
+              memory: 256Mi
+              cpu: "500m"
         ports:
         - containerPort: 3800
