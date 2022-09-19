@@ -1,5 +1,5 @@
 const fetchManage = ( endpoint, body, method = 'GET' ) => {
-    const url = 'http://34.121.108.72/' + endpoint;
+    const url = 'http://34.151.254.33/' + endpoint;
 
     if ( method === 'GET' ) {
         return fetch( url );
