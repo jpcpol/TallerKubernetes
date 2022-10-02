@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: blocnotas/frontend
+        image: killerpol/frontend
         ports:
         - containerPort: 80
